@@ -10,7 +10,7 @@
 $post_excerpt = get_the_excerpt(); // Get post excerpt.
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'fumetteria-content' ); ?>>
 	<div class="post-meta">
 		<?php
 		if ( is_singular() ) :
@@ -28,17 +28,17 @@ $post_excerpt = get_the_excerpt(); // Get post excerpt.
 			?>
 			<div class="post-byline">
 				<?php
+				fumetteria_posted_by(); ?>
+				・
+				<?php
 				fumetteria_posted_on();
-				fumetteria_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</div><!-- .entry-header -->
 
 	<div class="post-wrapper">
-		<div class="post-thumbnail">
 		<?php fumetteria_post_thumbnail(); ?>
-		</div>
 		<div class="post-content">
 			<?php
 			the_content(
@@ -68,5 +68,18 @@ $post_excerpt = get_the_excerpt(); // Get post excerpt.
 
 	<div class="post-footer">
 		<?php fumetteria_entry_footer(); ?>
-		</div><!-- .entry-footer -->
+	</div><!-- .entry-footer -->
+	<?php 
+		the_post_navigation(
+			array(
+				'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'fumetteria' ) . '</span> <span class="nav-title">%title</span>',
+				'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'fumetteria' ) . '</span> <span class="nav-title">%title</span>',
+			)
+		);
+
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->

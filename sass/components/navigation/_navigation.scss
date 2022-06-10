@@ -5,12 +5,12 @@
 }
 
 .menu-navigation {
-	display: flex;
+	display: none;
 	position: absolute;
     width: 100%;
     z-index: 99999;
 	top: 60px;
-	background-color: burlywood;
+	background-color: #121212;
 	ul, ol {
 		margin: 0;
 		list-style-type: none;
@@ -20,12 +20,18 @@
 	}
 }
 
+.admin-bar .menu-navigation {
+	top: 106px;
+}
+
 .header-container {
 	display: flex;
 	justify-content: space-between;
+	flex: auto;
+    align-items: center;
 }
 
-.header-logo, .footer-logo {
+.header-logo, .footer-logo, .menu-bars {
 	line-height: 0;
 	display: block;
 	align-self: center;
@@ -34,10 +40,23 @@
 	}
 }
 
+.header-logo svg {
+	padding-left: 10px;
+    width: 100%;
+}
+
+.menu-bars svg {
+	padding-right: 10px;
+}
+
 .header-menu {
 	padding: 10px;
 	li {
 		margin: 10px 0;
+		a {
+			color: #ffffff;
+			text-decoration: none;
+		}
 	}
 }
 
@@ -50,11 +69,45 @@
 		margin-right: auto;
 	}
 	.menu-navigation {
+		display: block;
 		position: relative;
 		width: auto;
 		background-color: black;
 		top: 0;
 		z-index: 1;
+		.menu-item-has-children:hover {
+			background-color: #1d1d1d;
+			transition: all .1s ease-in-out;
+			-webkit-transition: all .1s ease-in-out;
+			@media only screen and (max-width: 768px) {
+				transition: none;
+				background-color: #000000;
+			}
+			&.menu-item a {
+				color: white;
+			}
+			.sub-menu, .sub-menu:hover {
+				display: block;
+				position: absolute;
+				background-color: #000000;
+				padding: 10px;
+				a {
+					color: #ffffff;
+					padding: 0;
+					&:hover {
+						color: #cdcdcd;
+					}
+				}
+				@media only screen and (max-width: 768px) {
+					a {
+						padding: 10px;
+						&:hover {
+							color: #FFFFFF;
+						}
+					}
+				}
+			}
+		}
 	}
 	.header-menu {
 		display: flex;
@@ -65,7 +118,13 @@
 			margin-right: 8px;
 		}
 	}
-	.header-icon {
+	.menu-bars {
 		display: none;
+	}
+	.admin-bar .menu-navigation {
+		top: 0;
+	}
+	.header-logo svg {
+		padding-left: 0;
 	}
 }

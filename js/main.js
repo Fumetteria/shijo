@@ -26,5 +26,15 @@
                 tCounter: '<span class="mfp-counter">%curr% di %total%</span>'
             }
         });
+        var menu = document.getElementById("site-navigation");
+        $('.menu-bars').click( function() {
+            var menuStyle = getComputedStyle( menu );
+            const menuDisplay = menuStyle.display;
+            if ( menuDisplay === "none" ) {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        });
     });
 })( jQuery );

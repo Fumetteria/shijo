@@ -156,6 +156,10 @@ function fumetteria_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	if ( is_singular() ) {
+		wp_enqueue_script( 'fumetteria-scripts', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'fumetteria_scripts' );
 
@@ -235,3 +239,19 @@ function fumetteria_embedWrapper( $html, $url, $attr, $post_id)  {
 	return $html;
 }
 add_filter( 'embed_oembed_html', 'fumetteria_embedWrapper', 10, 4 );
+
+// Add Fancybox to posts.
+function fumetteria_fancybox() {
+	wp_enqueue_script ( 'fumetteria-magnificpopup', get_template_directory_uri() . '/assets/vendor/magnificpopup/magnificpopup.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_style( 'fumetteria-magnificpopup-style', get_template_directory_uri() . '/assets/vendor/magnificpopup/magnificpopup.css', false, 'all' );
+}
+add_action ( 'get_footer', 'fumetteria_fancybox' );
+
+function fumetteria_fancybox_data( $content ) {
+	global $post; // Get post
+	$pattern = "/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i"; // Search for image IN link (set from editor)
+	$replace = '<a$1href=$2$3.$4$5 class="post-img-link">'; // Replace pattern
+	$content = preg_replace( $pattern, $replace, $content ); // Replace content
+	return $content; // Echo content
+}
+add_filter( 'the_content', 'fumetteria_fancybox_data' );

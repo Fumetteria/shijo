@@ -1,8 +1,8 @@
 /*!
 Theme Name: Fumetteria
-Theme URI: https://fumetteria.moe/
-Author: Alessandro Zangrandi and Satoscio
-Author URI: https://fumetteria.moe/
+Theme URI: http://underscores.me/
+Author: Alessandro Zangrandi
+Author URI: http://underscores.me/
 Description: Fumetteria\'s website theme.
 Version: 1.0.0
 Tested up to: 5.4
@@ -686,6 +686,7 @@ textarea {
 		width: auto;
 		background-color: black;
 		top: 0;
+		z-index: 1;
 	}
 	.header-menu {
 		display: flex;
@@ -788,7 +789,7 @@ textarea {
 --------------------------------------------- */
 .gallery, .wp-block-gallery {
 	margin-bottom: 1.5em;
-	display: grid;
+	display: flex;
 	grid-gap: 1.5em;
 }
 

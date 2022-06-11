@@ -15,14 +15,12 @@
 		<?php
 		if ( is_search() ) :
 			?>
-			<p><?php esc_html_e( 'La ricerca non ha prodotto nessun risultato. Per favore, riprova a cercare ciò che desideri.', 'fumetteria' ); ?></p>
+			<p><?php esc_html_e( 'La ricerca non ha prodotto nessun risultato. Per favore, riprova a cercare ciò che desideri con la ricerca.', 'fumetteria' ); ?></p>
 			<?php
-			get_search_form();
 		else :
 			?>
-			<p><?php esc_html_e( 'Non siamo riusciti a trovare quello che desideravi. Prova a cercare.', 'fumetteria' ); ?></p>
+			<p><?php esc_html_e( 'Non siamo riusciti a trovare quello che ti serviva. Prova a cercare ciò che desideri con la ricerca.', 'fumetteria' ); ?></p>
 			<?php
-			get_search_form();
 		endif;
 		?>
 	</div>

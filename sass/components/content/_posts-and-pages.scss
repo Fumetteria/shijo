@@ -24,6 +24,10 @@
 		font-size: 17px;
 		line-height: 1.6em;
 	}
+	a {
+		text-decoration: underline;
+	}
+	border-bottom: 1px solid #b9b9b9;
 }
 
 .embed-wrapper {
@@ -69,6 +73,11 @@
 	}
 }
 
+.nav-links {
+	display: flex;
+    justify-content: space-between;
+}
+
 .tag-cloud-link {
 	background: #313131;
     padding: 5px 8px;
@@ -107,6 +116,39 @@
 	margin-top: 10px;
 }
 
+.post-tags {
+	margin-top: 10px;
+	a {
+		margin-right: 8px;
+		font-weight: 600;
+	}
+	.post-categories {
+		display: inline-flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+h1 {
+	font-size: 35px;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 27px;
+}
+h4 {
+	font-size: 24px;
+}
+h5 {
+	font-size: 21px;
+}
+h6 {
+	font-size: 19px;
+}
+
 @media (min-width: 1280px) {
 	.main-content {
 		padding: 0;
@@ -131,24 +173,6 @@
 		padding-left: 25px;
 		border-left: 1px solid #dcdcdc;
 		margin-top: 0;
-	}
-	h1 {
-		font-size: 35px;
-	}
-	h2 {
-		font-size: 30px;
-	}
-	h3 {
-		font-size: 27px;
-	}
-	h4 {
-		font-size: 24px;
-	}
-	h5 {
-		font-size: 21px;
-	}
-	h6 {
-		font-size: 19px;
 	}
 	.fumetteria-archive-post {
 		display: flex;

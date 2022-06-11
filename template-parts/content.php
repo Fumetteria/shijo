@@ -29,7 +29,7 @@ $post_excerpt = get_the_excerpt(); // Get post excerpt.
 			<div class="post-byline">
 				<?php
 				fumetteria_posted_by(); ?>
-				・
+				•
 				<?php
 				fumetteria_posted_on();
 				?>
@@ -54,9 +54,26 @@ $post_excerpt = get_the_excerpt(); // Get post excerpt.
 					),
 					wp_kses_post( get_the_title() )
 				)
-			);
-			?>
+			); ?>
 		</div>
+		<?php
+			$categories_list = get_the_category_list();
+			if ( $categories_list ) { ?>
+				<div class="post-tags">
+					<?php /* translators: 1: list of tags. */
+					printf( esc_html__( 'Categorie: %1$s', 'fumetteria' ), $categories_list ); // phpcs:ignore WordPress
+					//.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
+		<?php } ?>
+		<?php
+			$tags_list = get_the_tag_list();
+			if ( $tags_list ) { ?>
+				<div class="post-tags">
+					<?php /* translators: 1: list of tags. */
+					printf( esc_html__( 'Tag: %1$s', 'fumetteria' ), $tags_list ); // phpcs:ignore WordPress
+					//.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
+		<?php } ?>
 	</div>
 	<?php
 		// If comments are open or we have at least one comment, load up the comment template.

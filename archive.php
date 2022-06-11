@@ -32,7 +32,13 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(
+				array(
+					'prev_text' => __('Older posts', 'theme_textdomain'),
+					'next_text' => __('Newer posts', 'theme_textdomain'),
+					'screen_reader_text' => __('Posts navigation', 'theme_textdomain')
+				)
+			);
 
 		else :
 

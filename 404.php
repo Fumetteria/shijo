@@ -15,7 +15,7 @@ get_header();
 		<div class="fumetteria-content">
 		<h1 class="page-title"><?php esc_html_e( 'Oops! Questa pagina non è stata trovata.', 'fumetteria' ); ?></h1>
 			<div class="page-content">
-				<p><?php esc_html_e( 'Questa pagina non esiste. Torna alla pagina principale o usa la ricerca a lato.', 'fumetteria' ); ?></p>
+				<p><?php esc_html_e( 'Questa pagina non esiste. Torna alla pagina principale o usa la ricerca.', 'fumetteria' ); ?></p>
 			</div>
 		</div>
 		<?php

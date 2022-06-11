@@ -536,15 +536,12 @@ tr:nth-child(even) {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
-}
-
-a:visited {
-	color: #800080;
+	color: #000000;
+	text-decoration: none;
 }
 
 a:hover, a:focus, a:active {
-	color: #191970;
+	color: #2d2d2d;
 }
 
 a:focus {
@@ -636,9 +633,6 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 /* Navigation
@@ -678,13 +672,13 @@ textarea {
 	align-items: center;
 }
 
-.header-logo, .footer-logo, .menu-bars {
+.header-logo, .footer-logo, .menu-bars, .dark-mode-header {
 	line-height: 0;
 	display: block;
 	align-self: center;
 }
 
-.header-logo svg, .footer-logo svg, .menu-bars svg {
+.header-logo svg, .footer-logo svg, .menu-bars svg, .dark-mode-header svg {
 	height: 25px;
 }
 
@@ -693,8 +687,12 @@ textarea {
 	width: 100%;
 }
 
-.menu-bars svg {
+.menu-bars svg, .dark-mode-header svg {
 	padding-right: 10px;
+}
+
+.dark-mode-header svg {
+	margin-left: 10px;
 }
 
 .header-menu {
@@ -737,6 +735,14 @@ textarea {
 	text-decoration: none;
 }
 
+.menu-bars {
+	margin-left: auto;
+}
+
+.navigation.posts-navigation {
+	margin-top: 10px;
+}
+
 @media (min-width: 1280px) {
 	.header-container {
 		width: 1280px;
@@ -752,6 +758,8 @@ textarea {
 		background-color: black;
 		top: 0;
 		z-index: 1;
+		margin-left: auto;
+		margin-right: 10px;
 	}
 	.menu-navigation .menu-item-has-children:hover {
 		background-color: #1d1d1d;
@@ -820,6 +828,9 @@ textarea {
 	.fumetteria-footer .footer-social .footer-icon {
 		width: 2%;
 	}
+	.dark-mode-header svg {
+		padding-right: 0;
+	}
 }
 
 /* Posts and pages
@@ -844,11 +855,19 @@ textarea {
 	display: block;
 }
 
+.post-content {
+	border-bottom: 1px solid #b9b9b9;
+}
+
 .post-content p {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-size: 17px;
 	line-height: 1.6em;
+}
+
+.post-content a {
+	text-decoration: underline;
 }
 
 .embed-wrapper {
@@ -896,6 +915,11 @@ textarea {
 	font-weight: 600;
 }
 
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+}
+
 .tag-cloud-link {
 	background: #313131;
 	padding: 5px 8px;
@@ -940,6 +964,46 @@ textarea {
 	margin-top: 10px;
 }
 
+.post-tags {
+	margin-top: 10px;
+}
+
+.post-tags a {
+	margin-right: 8px;
+	font-weight: 600;
+}
+
+.post-tags .post-categories {
+	display: inline-flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 27px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 21px;
+}
+
+h6 {
+	font-size: 19px;
+}
+
 @media (min-width: 1280px) {
 	.main-content {
 		padding: 0;
@@ -964,24 +1028,6 @@ textarea {
 		padding-left: 25px;
 		border-left: 1px solid #dcdcdc;
 		margin-top: 0;
-	}
-	h1 {
-		font-size: 35px;
-	}
-	h2 {
-		font-size: 30px;
-	}
-	h3 {
-		font-size: 27px;
-	}
-	h4 {
-		font-size: 24px;
-	}
-	h5 {
-		font-size: 21px;
-	}
-	h6 {
-		font-size: 19px;
 	}
 	.fumetteria-archive-post {
 		display: flex;
@@ -1116,8 +1162,8 @@ textarea {
 }
 
 .widget_search .wp-block-search__label {
-	font-weight: 600;
-	font-size: 20px;
+	font-weight: 700;
+	font-size: 30px;
 }
 
 .widget_search .wp-block-search__inside-wrapper {
@@ -1224,22 +1270,6 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-/* Jetpack infinite scroll
---------------------------------------------- */
-/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	display: none;
-}
-
-/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
 /* Accessibility
@@ -1307,6 +1337,42 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* Dark mode
+--------------------------------------------- */
+@media (min-width: 1280px) {
+	body.dark-mode {
+		background-image: url("assets/img/background-dark.jpg");
+	}
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6, .dark-mode p, .dark-mode li, .dark-mode td, .dark-mode th, .dark-mode .post-tags, .dark-mode .post-tags a, .dark-mode .timeline-title a, .dark-mode .comment-reply-link, .dark-mode .post-byline, .dark-mode label, .dark-mode a, .dark-mode .author.vcard a, .dark-mode .wp-block-latest-posts__post-title, .dark-mode .post-title a, .dark-mode cite, .dark-mode .fumetteria-comment-info span {
+	color: #ffffff;
+}
+
+.dark-mode .fumetteria-sidebar {
+	border-left: 1px solid #262626;
+}
+
+.dark-mode .fumetteria-archive-post {
+	border-bottom: 1px solid #262626;
+}
+
+.dark-mode blockquote {
+	border-left: 5px solid #ffffff;
+}
+
+.dark-mode td, .dark-mode th {
+	border: 1px solid #262626;
+}
+
+.dark-mode tr:nth-child(even) {
+	background: #191919;
+}
+
+.dark-mode .fumetteria-archive, .dark-mode .fumetteria-post {
+	background: #1a1a1a;
 }
 
 /*# sourceMappingURL=style.css.map */

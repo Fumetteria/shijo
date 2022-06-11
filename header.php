@@ -22,6 +22,27 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<script>
+	/* Dark mode. */
+	let colorMode = localStorage.getItem("colorMode");
+	switch (colorMode) {
+		case 'dark':
+			document.body.classList.add('dark-mode');
+			break;
+		case 'light':
+			// Do nothing. It's default.
+			break;
+		default:
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				localStorage.setItem("colorMode", "dark");
+				document.body.classList.add('dark-mode');
+			}
+			else {
+				localStorage.setItem("colorMode", "light");
+			}
+			break;
+	}
+</script>
 <div class="fumetteria-wrapper">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'fumetteria' ); ?></a>
 	<header class="header-top">
@@ -46,5 +67,8 @@
 				);
 				?>
 			</nav>
+			<div class="dark-mode-header">
+				<svg xmlns="http://www.w3.org/2000/svg" style="fill: #ffffff;" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+			</div>
 		</div>
 	</header>

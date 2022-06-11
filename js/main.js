@@ -36,5 +36,18 @@
         menu.style.display = "none";
       }
     });
+    $(".dark-mode-header").click( function() {
+      colorMode = localStorage.getItem("colorMode");
+      if (colorMode === "dark") {
+        localStorage.setItem("colorMode", "light");
+        document.body.classList.remove("dark-mode");
+        console.log("Tema chiaro attivato!");
+      }
+      else if (colorMode === "light" || colorMode === "") {
+        localStorage.setItem("colorMode", "dark");
+        document.body.classList.add("dark-mode");
+        console.log("Tema scuro attivato!");
+      }
+  });
   });
 })( jQuery );

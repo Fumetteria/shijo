@@ -26,7 +26,7 @@
 		</div>
 		<div class="footer-text">
 			<p>(C) Fumetteria - 2022. Tutti i diritti riservati.</p>
-			<p>Sito di <a href="https://twitter.com/alexzan__" rel="nofollow noopener" target="_blank">Alessandro Zangrandi</a></p>
+			<p>Sito di <a href="https://twitter.com/alexzan__" rel="nofollow noopener" target="_blank">Alessandro Zangrandi (Alexzan)</a></p>
 		</div>
 	</footer>
 </div>

@@ -21,43 +21,44 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			$fumetteria_comment_count = get_comments_number();
 			if ( '1' === $fumetteria_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'fumetteria' ),
+					esc_html__( '1 commento su "%1$s"', 'fumetteria' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $fumetteria_comment_count, 'comments title', 'fumetteria' ) ),
+					esc_html( _nx( '%1$s commento su "%2$s"', '%1$s commenti su "%2$s"', $fumetteria_comment_count, 'comments title', 'fumetteria' ) ),
 					number_format_i18n( $fumetteria_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<div class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
+					'type'		 => 'comment',
+					'style'      => 'div',
 					'short_ping' => true,
+					'callback' 	=> 'fumetteria_comments_walker',
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</div><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();
@@ -65,7 +66,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'fumetteria' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'I commenti sono chiusi.', 'fumetteria' ); ?></p>
 			<?php
 		endif;
 

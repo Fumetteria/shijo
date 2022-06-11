@@ -60,6 +60,31 @@
 	}
 }
 
+.fumetteria-footer {
+	margin-top: 20px;
+	padding: 25px 0;
+    background: #2d2d2d;
+	text-align: center;
+	.footer-social {
+		.footer-icon {
+			width: 10%;
+			display: inline-block;
+			margin: 0 10px;
+		}
+	}
+	.footer-text {
+		margin-top: 10px;
+	}
+	p {
+		color: #ffffff;
+	}
+	a {
+		color: #ffffff;
+		font-weight: 600;
+		text-decoration: none;
+	}
+}
+
 @media (min-width: 1280px) {
 	.header-container {
 		width: 1280px;
@@ -126,5 +151,12 @@
 	}
 	.header-logo svg {
 		padding-left: 0;
+	}
+	.fumetteria-footer {
+		.footer-social {
+			.footer-icon {
+				width: 2%;
+			}
+		}
 	}
 }

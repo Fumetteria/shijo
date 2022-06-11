@@ -16,7 +16,7 @@ if ( ! function_exists( 'fumetteria_posted_on' ) ) :
 
 		$time_string = sprintf(	
 			$time_string,
-			esc_attr( get_the_date( 'j F Y ・ H:i'  ) ),
+			esc_attr( get_the_date( 'j F Y ・ H:i' ) ),
 			esc_html( get_the_date( 'j F Y ・ H:i' ) )
 		);
 

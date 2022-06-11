@@ -209,9 +209,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Remove content from page code.
  */
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
 remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
 remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
 remove_action( 'wp_head', 'rsd_link' );
@@ -222,7 +220,6 @@ remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 remove_action( 'wp_head', 'rest_output_link_wp_head' );
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
-add_filter( 'emoji_svg_url', '__return_false' );
 
 /**
  * Disable Curly Quotes
@@ -255,3 +252,35 @@ function fumetteria_fancybox_data( $content ) {
 	return $content; // Echo content
 }
 add_filter( 'the_content', 'fumetteria_fancybox_data' );
+
+function fumetteria_comments_walker() {
+	$user_email = get_comment_author_email();
+	$user_avatar = get_avatar( $user_email, 32 ); ?>
+	<div id="comment-<?php comment_ID() ?>" class="fumetteria-comment">
+		<div class="fumetteria-comment-wrapper">
+			<?php if ( get_option( 'show_avatars', true ) && $user_avatar ) : ?>
+			<div class="fumetteria-comment-avatar">
+				<?php echo $user_avatar; ?>
+			</div>
+			<?php endif; ?>
+			<div class="fumetteria-comment-content">
+				<div class="fumetteria-comment-info">
+					<p class="fumetteria-comment-author"><?php echo get_comment_author(); ?></p>
+					<span style="margin-right: 5px;">•</span>
+					<p class="fumetteria-comment-date"><?php echo get_comment_date( 'j F Y - H:i' ); ?></p>
+				</div>
+				<p class="fumetteria-comment-text"><?php echo get_comment_text(); ?></p>
+				<div class="fumetteria-comment-reply">
+						<?php
+							comment_reply_link( [
+								'add_below' => true,
+								'depth'     => 20,
+								'max_depth' => 200,
+								'before'    => '<div class="reply">',
+								'after'     => '</div>'
+							]);
+						?>
+				</div>
+			</div>
+		</div>
+<?php }

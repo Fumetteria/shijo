@@ -415,6 +415,8 @@ i {
 
 blockquote {
 	margin: 1em 0;
+	padding-left: 20px;
+	border-left: 5px solid black;
 }
 
 address {
@@ -709,6 +711,33 @@ textarea {
 	text-decoration: none;
 }
 
+.fumetteria-footer {
+	margin-top: 20px;
+	padding: 25px 0;
+	background: #2d2d2d;
+	text-align: center;
+}
+
+.fumetteria-footer .footer-social .footer-icon {
+	width: 10%;
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.fumetteria-footer .footer-text {
+	margin-top: 10px;
+}
+
+.fumetteria-footer p {
+	color: #ffffff;
+}
+
+.fumetteria-footer a {
+	color: #ffffff;
+	font-weight: 600;
+	text-decoration: none;
+}
+
 @media (min-width: 1280px) {
 	.header-container {
 		width: 1280px;
@@ -786,6 +815,9 @@ textarea {
 	.header-logo svg {
 		padding-left: 0;
 	}
+	.fumetteria-footer .footer-social .footer-icon {
+		width: 2%;
+	}
 }
 
 /* Posts and pages
@@ -841,6 +873,88 @@ textarea {
 
 .twitter-tweet, .instagram-media {
 	margin: auto !important;
+}
+
+.fumetteria-comment {
+	margin-top: 10px;
+}
+
+.fumetteria-comment .fumetteria-comment {
+	margin-left: 5%;
+}
+
+.fumetteria-comment-wrapper, .fumetteria-comment-info {
+	display: flex;
+}
+
+.fumetteria-comment-info {
+	flex-wrap: wrap;
+}
+
+.comments-area {
+	margin-top: 20px;
+}
+
+.fumetteria-comment-avatar, .fumetteria-comment-text, .comment-respond, .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url, .comment-form-cookies-consent, .form-submit {
+	margin-top: 10px;
+}
+
+.comment-form-author, .comment-form-email, .comment-form-url {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.comment-form-comment > textarea {
+	margin-top: 5px;
+}
+
+.fumetteria-comment-avatar {
+	margin-right: 10px;
+}
+
+.fumetteria-comment-reply {
+	margin-top: 30px;
+}
+
+.fumetteria-comment-content {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #dfdfdf;
+	border-radius: 10px;
+}
+
+.fumetteria-comment-author {
+	margin-right: 5px;
+	font-weight: 600;
+}
+
+.comment-reply-link {
+	color: #000000;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.comment-reply-link:visited, .comment-reply-link:hover {
+	color: #000000;
+}
+
+.logged-in-as a, .author.vcard a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.logged-in-as a:hover, .author.vcard a:hover {
+	text-decoration: underline;
+}
+
+.form-submit input {
+	background: black;
+	color: white;
+	padding: 10px;
+	font-weight: 600;
+	border-radius: 6px;
 }
 
 @media (min-width: 1280px) {

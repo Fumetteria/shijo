@@ -5,3 +5,85 @@
 .bypostauthor {
 	display: block;
 }
+
+.fumetteria-comment {
+	margin-top: 10px;
+	.fumetteria-comment {
+		margin-left: 5%;
+	}
+}
+
+.fumetteria-comment-wrapper, .fumetteria-comment-info {
+	display: flex;
+}
+
+.fumetteria-comment-info {
+	flex-wrap: wrap;
+}
+
+.comments-area {
+	margin-top: 20px;
+}
+
+.fumetteria-comment-avatar, .fumetteria-comment-text, .comment-respond, .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url, .comment-form-cookies-consent, .form-submit {
+	margin-top: 10px;
+}
+
+.comment-form-author, .comment-form-email, .comment-form-url {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-form-comment {
+	textarea {
+		margin-top: 5px;
+		resize: vertical;	
+	}
+}
+
+.fumetteria-comment-avatar {
+	margin-right: 10px;
+}
+
+.fumetteria-comment-reply {
+	margin-top: 30px;
+}
+
+.fumetteria-comment-content {
+	width: 100%;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+}
+
+.fumetteria-comment-author {
+	margin-right: 5px;
+    font-weight: 600;
+}
+
+.comment-reply-link {
+	color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+	&:visited, &:hover {
+		color: #000000;
+	}
+}
+
+.logged-in-as a, .author.vcard a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: 600;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.form-submit input {
+	background: black;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+	border-radius: 6px;
+}

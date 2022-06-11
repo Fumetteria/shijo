@@ -1,8 +1,44 @@
 .widget {
-	margin: 0 0 1.5em;
-
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
 	}
+}
+
+.wp-block-latest-posts__list {
+	li {
+		text-align: center;
+		margin-top: 20px;
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+	.wp-block-latest-posts__post-title {
+		color: #000000;
+		text-decoration: none;
+		font-size: 20px;
+		font-weight: 600;
+	}
+}
+
+.widget_search {
+	margin-bottom: 10px;
+	.wp-block-search__label {
+		font-weight: 600;
+		font-size: 20px;
+	}
+	.wp-block-search__inside-wrapper {
+		margin-top: 5px;
+	}
+	.wp-block-search__button {
+		background: #2d2d2d;
+		color: #ffffff;
+		padding: 5px 8px;
+		font-weight: 600;
+		border-radius: 6px;
+	}
+}
+
+.wp-block-tag-cloud {
+	margin-top: 10px;
 }

@@ -33,9 +33,9 @@ $post_excerpt = get_the_excerpt(); // Get post excerpt.
 				<?php
 				fumetteria_posted_on();
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php endif; ?>
-	</div><!-- .entry-header -->
+	</div>
 
 	<div class="post-wrapper">
 		<?php fumetteria_post_thumbnail(); ?>
@@ -55,31 +55,13 @@ $post_excerpt = get_the_excerpt(); // Get post excerpt.
 					wp_kses_post( get_the_title() )
 				)
 			);
-
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fumetteria' ),
-					'after'  => '</div>',
-				)
-			);
 			?>
-		</div><!-- .entry-content -->
+		</div>
 	</div>
-
-	<div class="post-footer">
-		<?php fumetteria_entry_footer(); ?>
-	</div><!-- .entry-footer -->
-	<?php 
-		the_post_navigation(
-			array(
-				'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'fumetteria' ) . '</span> <span class="nav-title">%title</span>',
-				'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'fumetteria' ) . '</span> <span class="nav-title">%title</span>',
-			)
-		);
-
+	<?php
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) :
 			comments_template();
 		endif;
 	?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

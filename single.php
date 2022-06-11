@@ -20,9 +20,9 @@ get_header();
 
 			endwhile; // End of the loop.
 			?>
-			<?php get_sidebar(); ?>
+			<?php get_sidebar( 'article' ); ?>
 		</div>
-	</div><!-- #main -->
+	</div>
 
 <?php
 get_footer();

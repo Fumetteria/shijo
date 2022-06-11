@@ -1,12 +1,13 @@
 <?php
 /**
- * Template part for displaying results in search pages
+ * Template part for displaying posts in archive
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Fumetteria
  */
 
+$post_excerpt = get_the_excerpt(); // Get post excerpt.
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'fumetteria-archive-post' ); ?>>

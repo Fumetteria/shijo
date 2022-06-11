@@ -157,9 +157,7 @@ function fumetteria_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	if ( is_singular() ) {
-		wp_enqueue_script( 'fumetteria-scripts', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
-	}
+	wp_enqueue_script( 'fumetteria-scripts', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'fumetteria_scripts' );
 

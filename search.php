@@ -10,19 +10,16 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+<div id="content-wrapper" class="main-content">
+	<div class="fumetteria-archive">
+		<div class="fumetteria-content">
 		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'fumetteria' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
+			<h1 class="page-title">
+				<?php
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Risultati per: %s', 'fumetteria' ), '<span>' . get_search_query() . '</span>' );
+				?>
+			</h1>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -45,9 +42,11 @@ get_header();
 
 		endif;
 		?>
-
-	</main><!-- #main -->
-
+		</div>
+		<?php 
+		get_sidebar();
+		?>
+	</div>
+</div>
 <?php
-get_sidebar();
 get_footer();

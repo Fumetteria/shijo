@@ -7,11 +7,11 @@
  * @package Fumetteria
  */
 
-if ( ! is_active_sidebar( 'sidebar-home' ) ) {
+if ( ! is_active_sidebar( 'sidebar-post' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="fumetteria-sidebar">
-	<?php dynamic_sidebar( 'sidebar-home' ); ?>
+	<?php dynamic_sidebar( 'sidebar-post' ); ?>
 </aside>

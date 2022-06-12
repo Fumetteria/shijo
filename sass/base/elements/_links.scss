@@ -1,11 +1,11 @@
 a {
-	color: #000000;
+	color: $color__text-main;
 	text-decoration: none;
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: #2d2d2d;
+		color: $color__background-other;
 	}
 
 	&:focus {

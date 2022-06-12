@@ -18,7 +18,7 @@ get_header();
 	<div id="content-wrapper" class="main-content">
 		<div class="fumetteria-archive">
 			<div class="fumetteria-content">
-				<h1>Blog della Fumetteria</h1>
+				<h1>Fumetteria - Blog</h1>
 		<?php
 		if ( have_posts() ) : ?>
 			<?php

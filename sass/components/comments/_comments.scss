@@ -7,7 +7,6 @@
 }
 
 .fumetteria-comment {
-	margin-top: 10px;
 	.fumetteria-comment {
 		margin-left: 5%;
 	}
@@ -25,7 +24,7 @@
 	margin-top: 20px;
 }
 
-.fumetteria-comment-avatar, .fumetteria-comment-text, .comment-respond, .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url, .comment-form-cookies-consent, .form-submit {
+.fumetteria-comment, .fumetteria-comment-avatar, .fumetteria-comment-text, .comment-respond, .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url, .comment-form-cookies-consent, .form-submit {
 	margin-top: 10px;
 }
 
@@ -53,8 +52,9 @@
 .fumetteria-comment-content {
 	width: 100%;
     padding: 10px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid $color__border-table;
     border-radius: 10px;
+	background: $color__background-comment;
 }
 
 .fumetteria-comment-author {
@@ -62,28 +62,10 @@
     font-weight: 600;
 }
 
-.comment-reply-link {
-	color: #000000;
-    text-decoration: none;
+.comment-reply-link, .logged-in-as a, .author.vcard a {
     font-weight: 600;
-	&:visited, &:hover {
-		color: #000000;
-	}
-}
-
-.logged-in-as a, .author.vcard a {
-	color: #000000;
-	text-decoration: none;
-	font-weight: 600;
-	&:hover {
-		text-decoration: underline;
-	}
 }
 
 .form-submit input {
-	background: black;
-    color: white;
     padding: 10px;
-    font-weight: 600;
-	border-radius: 6px;
 }

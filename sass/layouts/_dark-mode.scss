@@ -5,25 +5,37 @@
 }
 
 .dark-mode {
-    h1, h2, h3, h4, h5, h6, p, li, td, th, .post-tags, .post-tags a, .timeline-title a, .comment-reply-link, .post-byline, label, a, .author.vcard a, .wp-block-latest-posts__post-title, .post-title a, cite, .fumetteria-comment-info span {
+    h1, h2, h3, h4, h5, h6, p, li, td, th, .post-tags, .post-tags a, .timeline-title a, .comment-reply-link, .post-byline, label, a, .author.vcard a, .wp-block-latest-posts__post-title, .post-title a, cite, .fumetteria-comment-info span, figcaption {
         color: $color__darkmode-text;
+    }
+    .fumetteria-comment-content {
+        background: #212121;
     }
     .fumetteria-sidebar {
         border-left: 1px solid $color__darkmode-borders;
     }
     .fumetteria-archive-post {
         border-bottom: 1px solid $color__darkmode-borders;
+        &:last-of-type {
+            border: none;
+        }
     }
     blockquote {
-        border-left: 5px solid #ffffff;
+        border-left: 5px solid $color__background-body;
     }
     td, th {
-        border: 1px solid #262626;
+        border: 1px solid $color__darkmode-borders;
     }
     tr:nth-child(even) {
         background: #191919;
     }
     .fumetteria-archive, .fumetteria-post {
         background: #1a1a1a;
+    }
+    .form-submit input {
+        background: $color__background-other;
+    }
+    a:hover {
+        color: #ebebeb;
     }
 }

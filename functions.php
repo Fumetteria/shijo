@@ -207,17 +207,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Remove content from page code.
  */
-
-remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
-remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-remove_action( 'wp_head', 'rest_output_link_wp_head' );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 
 /**
  * Disable Curly Quotes

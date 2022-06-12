@@ -1,6 +1,6 @@
 .header-top {
 	height: 60px;
-	background-color: black;
+	background-color: $color__background-dark;
 	display: flex;
 }
 
@@ -57,17 +57,12 @@
 	padding: 10px;
 	li {
 		margin: 10px 0;
-		a {
-			color: #ffffff;
-			text-decoration: none;
-			font-weight: 600;
-		}
 	}
 }
 
 .fumetteria-footer {
 	padding: 25px 0;
-    background: #2d2d2d;
+    background: $color__background-other;
 	text-align: center;
 	.footer-social {
 		.footer-icon {
@@ -80,12 +75,14 @@
 		margin-top: 10px;
 	}
 	p {
-		color: #ffffff;
+		color: $color__text-bg-dark;
 	}
+}
+
+.header-menu, .fumetteria-footer {
 	a {
-		color: #ffffff;
+		color: $color__text-bg-dark;
 		font-weight: 600;
-		text-decoration: none;
 	}
 }
 
@@ -109,7 +106,7 @@
 		display: block;
 		position: relative;
 		width: auto;
-		background-color: black;
+		background-color: $color__background-dark;
 		top: 0;
 		z-index: 1;
 		margin-left: auto;
@@ -120,28 +117,25 @@
 			-webkit-transition: all .1s ease-in-out;
 			@media only screen and (max-width: 768px) {
 				transition: none;
-				background-color: #000000;
+				background-color: $color__background-dark;
 			}
 			&.menu-item a {
-				color: white;
+				color: $color__text-bg-dark;
 			}
 			.sub-menu, .sub-menu:hover {
 				display: block;
 				position: absolute;
-				background-color: #000000;
+				background-color: $color__background-dark;
 				padding: 10px;
 				a {
-					color: #ffffff;
+					color: $color__text-bg-dark;
 					padding: 0;
-					&:hover {
-						color: #cdcdcd;
-					}
 				}
 				@media only screen and (max-width: 768px) {
 					a {
 						padding: 10px;
 						&:hover {
-							color: #FFFFFF;
+							color: $color__text-bg-dark;
 						}
 					}
 				}

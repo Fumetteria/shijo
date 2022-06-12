@@ -1,6 +1,6 @@
 .fumetteria-content {
 	.post-meta {
-		margin-bottom: 1em;
+		margin-bottom: 16px;
 		.post-title {
 			margin-bottom: 6px;
 		}
@@ -11,7 +11,7 @@
 }
 
 .post-thumbnail {
-	margin-bottom: 1em;
+	margin-bottom: 16px;
 	img {
 		display: block;
 	}
@@ -23,32 +23,16 @@
 		margin-bottom: 1em;
 		font-size: 17px;
 		line-height: 1.6em;
+		word-break: break-word;
 	}
 	a {
 		text-decoration: underline;
 	}
-	border-bottom: 1px solid #b9b9b9;
-}
-
-.embed-wrapper {
-	position: relative;
-	padding-top: 56.25%;
-	width: 100%;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-	}
+	border-bottom: 1px solid $color__border-content;
 }
 
 .fumetteria-post, .fumetteria-archive {
-	padding: 10px;
+	padding: 10px 15px;
 }
 
 .twitter-tweet, .instagram-media {
@@ -60,15 +44,14 @@
 }
 
 .post-tag {
-	background: #313131;
+	background: $color__background-other;
     margin-top: 8px;
     display: inline-block;
     padding: 5px 8px;
     margin-right: 10px;
 	border-radius: 6px;
 	a {
-		color: white;
-		text-decoration: none;
+		color: $color__text-bg-dark;
 		font-weight: 600;
 	}
 }
@@ -79,30 +62,23 @@
 }
 
 .tag-cloud-link {
-	background: #313131;
+	background: $color__background-other;
     padding: 5px 8px;
-	color: white;
+	color: $color__text-bg-dark;
 	text-decoration: none;
 	font-weight: 600;
 	border-radius: 6px;
-	&:hover {
-		color: #e0e0e0;
-	}
 	&:visited {
-		color: #ffffff;
+		color: $color__text-bg-dark;
 	}
 }
 
 .fumetteria-archive-post {
 	align-items: center;
-	padding: 1em 0;
-	border-bottom: 1px solid #b7b7b7;
+	padding: 16px 0;
+	border-bottom: 1px solid $color__border-content;
 	&:last-of-type {
 		border: none;
-	}
-	.post-title a {
-		color: #000000;
-		text-decoration: none;
 	}
 	.post-meta {
 		margin-bottom: 0;
@@ -133,18 +109,23 @@
 h1 {
 	font-size: 35px;
 }
+
 h2 {
 	font-size: 30px;
 }
+
 h3 {
 	font-size: 27px;
 }
+
 h4 {
 	font-size: 24px;
 }
+
 h5 {
 	font-size: 21px;
 }
+
 h6 {
 	font-size: 19px;
 }
@@ -158,7 +139,7 @@ h6 {
 		width: 1280px;
 		max-width: 1280px;
 		margin: auto;
-		background: #ffffff;
+		background: $color__background-body;
 		padding: 20px 30px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
@@ -171,7 +152,7 @@ h6 {
 		flex: 0 0 33.3333%;
 		max-width: 33.3333%;
 		padding-left: 25px;
-		border-left: 1px solid #dcdcdc;
+		border-left: 1px solid $color__border-table;
 		margin-top: 0;
 	}
 	.fumetteria-archive-post {

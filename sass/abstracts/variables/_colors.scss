@@ -4,6 +4,10 @@ $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-other: #2d2d2d;
+$color__background-table: #f2f2f2;
+$color__background-comment: #f9f9f9;
+$color__background-dark: #000000;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
@@ -12,16 +16,19 @@ $color__link: #4169e1; //royalblue
 $color__link-visited: #800080; //purple
 $color__link-hover: #191970; //midnightblue
 $color__text-main: #000000;
+$color__text-bg-dark: $color__background-body;
 
-$color__border-button: #ccc #ccc #bbb;
+$color__border-button: #181818;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+$color__border-table: #dddddd;
+$color__border-blockquote: $color__border-button;
+$color__border-content: #b9b9b9;
 
-$color__darkmode-active: #000000;
+$color__darkmode-active: $color__text-main;
 $color__darkmode-text: #ffffff;
 $color__darkmode-bg: #0e0e0e;
-$color__darkmode-link: #ff2121;
-$color__darkmode-various: #ffffff;
-$color__darkmode_borders: #262626;
+$color__darkmode-various: $color__darkmode-text;
+$color__darkmode-borders: #262626;

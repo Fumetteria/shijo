@@ -32,7 +32,7 @@
 
 	<?php fumetteria_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="post-content">
 		<?php
 		the_content();
 		?>

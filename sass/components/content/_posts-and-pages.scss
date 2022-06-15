@@ -28,6 +28,11 @@
 	a {
 		text-decoration: underline;
 	}
+	ul, li {
+		font-size: 17px;
+		line-height: 1.6em;
+		word-break: break-word;
+	}
 	border-bottom: 1px solid $color__border-content;
 }
 

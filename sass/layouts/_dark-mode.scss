@@ -11,8 +11,10 @@
     .fumetteria-comment-content {
         background: #212121;
     }
-    .fumetteria-sidebar {
-        border-left: 1px solid $color__darkmode-borders;
+    @media (min-width: 1280px) {
+        .fumetteria-sidebar {
+            border-left: 1px solid $color__darkmode-borders;
+        }
     }
     .fumetteria-archive-post {
         border-bottom: 1px solid $color__darkmode-borders;
